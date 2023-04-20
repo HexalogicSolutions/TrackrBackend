@@ -90,13 +90,13 @@ app.post('/upload', function (req, res) {
 });
 
 // server static assests if in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('trackr-client/build'));
-  const path = require('path')
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'trackr-client', 'build', 'index.html'))
-  })
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('trackr-client/build'));
+//   const path = require('path')
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'trackr-client', 'build', 'index.html'))
+//   })
+// }
 
 
 app.listen(Port, () => {
