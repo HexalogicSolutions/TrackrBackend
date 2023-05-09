@@ -178,3 +178,104 @@
 2023-04-20T11:12:02.690+05:30|DEBUG|Server started and running at Port + 5000
 2023-04-20T11:20:07.907+05:30|DEBUG|Server started and running at Port + 5000
 2023-04-20T11:20:09.060+05:30|DEBUG|Server started and running at Port + 5000
+2023-04-20T15:40:26.425+05:30|DEBUG|Server started and running at Port + 5000
+2023-04-20T15:45:13.441+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:45:13.655+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:45:13.956+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T15:45:15.748+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:45:16.158+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:45:16.423+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T15:59:23.846+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:59:23.861+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:59:24.238+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:59:24.239+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:59:25.491+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T15:59:25.759+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T15:59:38.552+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:59:38.553+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:59:38.955+05:30|DEBUG|Jwt Sign Successfully
+2023-04-20T15:59:40.489+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:59:40.490+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:59:40.758+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T15:59:56.260+05:30|DEBUG|Route: auth.post/
+2023-04-20T15:59:56.260+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T15:59:56.260+05:30|ERROR|Please Enter All the data
+2023-04-20T15:59:56.525+05:30|ERROR|User does not exist
+2023-04-20T15:59:56.527+05:30|ERROR|Jwt Sign in Error: : Cannot set headers after they are sent to the client - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:267:15)
+    at F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\routes\api\auth.js:55:22
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:447:9)
+2023-04-20T18:27:42.871+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:27:42.964+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:27:44.997+05:30|DEBUG|Jwt Sign Successfully
+2023-04-20T18:27:46.694+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:27:46.694+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:27:46.989+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T18:28:09.905+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:28:09.906+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:28:10.195+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T18:28:10.617+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:28:10.618+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:28:10.912+05:30|DEBUG|Profile authenticated successfully
+2023-04-20T18:35:10.250+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:35:10.251+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:35:10.251+05:30|ERROR|Please Enter All the data
+2023-04-20T18:35:12.035+05:30|ERROR|User does not exist
+2023-04-20T18:35:12.053+05:30|ERROR|Jwt Sign in Error: : Cannot set headers after they are sent to the client - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:267:15)
+    at F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\routes\api\auth.js:55:22
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:447:9)
+2023-04-20T18:35:20.665+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:35:20.666+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:35:20.666+05:30|ERROR|Please Enter All the data
+2023-04-20T18:35:21.338+05:30|ERROR|User does not exist
+2023-04-20T18:35:21.339+05:30|ERROR|Jwt Sign in Error: : Cannot set headers after they are sent to the client - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:267:15)
+    at F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\routes\api\auth.js:55:22
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:447:9)
+2023-04-20T18:35:29.506+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:35:29.506+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:35:29.507+05:30|ERROR|Please Enter All the data
+2023-04-20T18:35:29.785+05:30|ERROR|User does not exist
+2023-04-20T18:35:29.786+05:30|ERROR|Jwt Sign in Error: : Cannot set headers after they are sent to the client - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:267:15)
+    at F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\routes\api\auth.js:55:22
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:447:9)
+2023-04-20T18:35:41.168+05:30|DEBUG|Route: auth.post/
+2023-04-20T18:35:41.168+05:30|DEBUG|Inserting auth record: [object Object]
+2023-04-20T18:35:41.169+05:30|ERROR|Please Enter All the data
+2023-04-20T18:35:41.448+05:30|ERROR|User does not exist
+2023-04-20T18:35:41.449+05:30|ERROR|Jwt Sign in Error: : Cannot set headers after they are sent to the client - Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:399:5)
+    at ServerResponse.setHeader (node:_http_outgoing:645:11)
+    at ServerResponse.header (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\node_modules\express\lib\response.js:267:15)
+    at F:\HLS_Dev\TrackR\trackRTest-New\trackr-server\routes\api\auth.js:55:22
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:447:9)

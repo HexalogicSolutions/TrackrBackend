@@ -68,7 +68,24 @@ router.get("/", (req, res) => {
       logger.errorObj('Error to find all user list', err)
     });
 });
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+  
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      usr_active: "true",
+    };
+  }
 
+  User.find(activeFilter)
+    .then((usr) => {
+      res.send(usr);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find users list", err);
+    });
+});
 // get user by code
 router.get("/:code", (req, res) => {
   logger.debug("Getting user by code: ");

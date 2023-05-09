@@ -41,6 +41,7 @@ router.post("/", (req, res) => {
 
 
 router.get("/", (req, res) => {
+ 
   logger.debug("Getting list of all unit: ");
   logger.debug("Route: unit.get/");
   Unit.find()
@@ -119,7 +120,7 @@ router.put("/", (req, res) => {
         logger.debug('Unit Profile Updated')
         res.json({
           success: true,
-          msg: "Unit Profile Updatedxx",
+          msg: "Unit Profile Updated",
         });
       })
       .catch((err) => {

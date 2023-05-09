@@ -92,6 +92,25 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      est_active: "true",
+    };
+  }
+
+  EntitySubType.find(activeFilter)
+    .then((est) => {
+      res.send(est);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find entity sub type list", err);
+    });
+});
+
 
 router.get("/:code", (req, res) => {
   logger.debug("Route: entitysubtype.get/");

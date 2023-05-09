@@ -91,6 +91,25 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      loc_enable: "true",
+    };
+  }
+
+  Location.find(activeFilter)
+    .then((loc) => {
+      res.send(loc);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find location list", err);
+    });
+});
+
 // get locations by code
 router.get("/:code", (req, res) => {
   logger.debug("Getting list of all location by code: ");

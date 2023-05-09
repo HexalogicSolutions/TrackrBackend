@@ -92,6 +92,25 @@ router.get("/", (req, res) => {
 });
 
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      lar_active: "true",
+    };
+  }
+
+  LocationArea.find(activeFilter)
+    .then((lar) => {
+      res.send(lar);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find location area list", err);
+    });
+});
+
 
 
 

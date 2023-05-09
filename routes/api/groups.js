@@ -60,6 +60,25 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+  console.log("isActive : " + isActive);
+  
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      grp_enabled: "true",
+    };
+  }
+
+  UserGroup.find(activeFilter)
+    .then((grp) => {
+      res.send(grp);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find supplier status list", err);
+    });
+});
 // get group by code
 router.get("/:code", (req, res) => {
   logger.debug("Route: groups.get/:code");

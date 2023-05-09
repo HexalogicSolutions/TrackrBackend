@@ -6,6 +6,7 @@ const ActionGroup = require("../../models/ActionGroup");
 const Entity = require("../../models/Entity");
 const Sale = require("../../models/Sale");
 const logger = require("../../helpers/logger");
+
 router.get("/find", (req, res) => {
   logger.debug("Route: search.get/find");
   const subtype = req.query.subtype;

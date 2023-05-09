@@ -145,10 +145,29 @@ router.get("/findcount", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+console.log('DATa'/req.params.isActive);
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      act_enabled: true,
+    };
+  }
+
+  ActionGroup.find(activeFilter)
+    .then((act) => {
+      res.send(act);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find actiongroup list", err);
+    });
+});
 // entity list
 router.get("/find", (req, res) => {
   logger.debug("Route: actiongroup.get/find");
   const subtype = req.query.subtype;
+  const ent_active = req.query.active
   const entitytype = req.query.entitytype;
   const status = req.query.status;
   const warehouse = req.query.warehouse;
@@ -161,6 +180,12 @@ router.get("/find", (req, res) => {
   const fromDt = req.query.fromDt;
   const toDt = req.query.toDt;
 
+  let entActiveFilter = {};
+  if (ent_active) {
+    entActiveFilter = {
+      ent_active: { $in: ent_active },
+    };
+  }
   let entCodeFilter = {};
   if (ent_code) {
     entCodeFilter = {
@@ -252,10 +277,12 @@ router.get("/find", (req, res) => {
       materialFilter,
       entCodeFilter,
       extCodeFilter,
+      entActiveFilter,
       serialFilter,
       lastSeenFilter,
       locationAreaFilter,
       warehouseFilter,
+      
     ],
   })
     .then((entity) => {

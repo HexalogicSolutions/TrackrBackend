@@ -95,6 +95,24 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      ett_active: "true",
+    };
+  }
+
+  EntityType.find(activeFilter)
+    .then((ett) => {
+      res.send(ett);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find entity type list", err);
+    });
+});
+
 // get group by code
 router.get("/:code", (req, res) => {
   logger.debug("Route: entitytype.get/:code");
@@ -146,7 +164,7 @@ router.delete("/:code", (req, res) => {
 //update api
 router.put("/", (req, res) => {
   const { code, name, active } = req.body;
-
+console.log('your databasebody',req.body);
   logger.debug("Route: entitytype.put/");
   logger.debug("Updating  record: " + JSON.stringify(req.data))
   EntityType.findOne({ ett_code: code }).then((entityType) => {

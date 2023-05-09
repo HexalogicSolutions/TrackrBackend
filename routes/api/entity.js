@@ -29,7 +29,8 @@ router.post("/", (req, res) => {
     price,
     unit,
     sku,
-    lot
+    lot,
+    active
   } = req.body;
   //console.log("Your price is :"+price);
   if (!code || !desc) {
@@ -63,7 +64,8 @@ router.post("/", (req, res) => {
       ent_price: price,
       ent_unit: unit,
       ent_sku: sku,
-      ent_lot: lot
+      ent_lot: lot,
+      ent_active:active
     });
     newEntity
       .save()
@@ -92,6 +94,26 @@ router.get("/", (req, res) => {
       logger.errorObj('Error to found entity:', err)
     });
 });
+
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+  
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      ent_active: "true",
+    };
+  }
+
+  Entity.find(activeFilter)
+    .then((ett) => {
+      res.send(ett);
+    })
+    .catch((ett) => {
+      logger.errorObj("Error to find users list", ett);
+    });
+});
+
 
 router.get("/current-stock-by-material", (req, res) => {
   logger.debug("Route: entity.get/current-stock-by-material");
@@ -268,7 +290,8 @@ router.put("/", (req, res) => {
     price,
     unit,
     sku,
-    lot
+    lot,
+    active
   } = req.body;
   Entity.findOne({ ent_code: code }).then((entity) => {
     if (!entity) {
@@ -297,7 +320,8 @@ router.put("/", (req, res) => {
           ent_price: price,
           ent_unit: unit,
           ent_sku: sku,
-          ent_lot: lot
+          ent_lot: lot,
+          ent_active:active
         },
       }
     )

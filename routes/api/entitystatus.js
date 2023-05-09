@@ -57,6 +57,24 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+console.log('DATa'/req.params.isActive);
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      sta_enabled: true,
+    };
+  }
+
+  EntityStatus.find(activeFilter)
+    .then((sup) => {
+      res.send(sup);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find entity status list", err);
+    });
+});
 
 router.get("/:code", (req, res) => {
   logger.debug("Route: entitystatus.get/:code");

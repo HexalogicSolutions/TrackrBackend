@@ -65,11 +65,17 @@ const EntitySchema = new Schema({
   ent_price: {
     type: Number,
   },
+  ent_price: {
+    type: Number,
+  },
   ent_lastseen: {
     type: Date,
   },
   ent_duration: {
     type: Number,
+  },
+  ent_active: {
+    type : Boolean,
   },
 });
 

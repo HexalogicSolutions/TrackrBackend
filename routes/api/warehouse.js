@@ -76,6 +76,25 @@ router.post("/", (req, res) => {
     });
 });
 
+router.get("/active/:isActive", (req, res) => {
+  let activeFilter = {};
+  const isActive = req.params.isActive;
+
+  if (isActive && isActive.toUpperCase() == "Y") {
+    activeFilter = {
+      whs_active: "true",
+    };
+  }
+
+  Warehouse.find(activeFilter)
+    .then((wr) => {
+      res.send(wr);
+    })
+    .catch((err) => {
+      logger.errorObj("Error to find warehouse list", err);
+    });
+});
+
 
 router.get("/", (req, res) => {
   logger.debug("Getting list of all warehouse: ");

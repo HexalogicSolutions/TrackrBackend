@@ -18,4 +18,16 @@ router.get("/", (req, res) => {
         });
 });
 
+router.get("/active", (req, res) => {
+    logger.debug("Getting list of all supplier status: ");
+    logger.debug("Route: supplierstatus.get/");
+    Supplier.find({sup_sta_desc:'Active'})
+        .then((sup) => {
+            res.send(sup);
+        })
+        .catch((err) => {
+            logger.errorObj('Error to find supplier status list', err);
+        });
+});
+
 module.exports = router;
