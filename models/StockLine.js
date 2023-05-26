@@ -33,7 +33,7 @@ const StockLineSchema = new Schema({
         type: Number,
     },
     stl_qty_variance: {
-        type: String,
+        type: Number,
     },
     stl_weight: {
         type: Number,
